@@ -138,23 +138,4 @@ The script produces:
 - Best results achieved with consistent lighting and minimal movement
 - SIFT provides robust feature detection across different scenes
 
-## Known Issues and Future Improvements
 
-1. Coin Detection:
-   - Improve detection of overlapping coins
-   - Add denomination classification
-   - Enhance performance in varying lighting conditions
-
-2. Panorama Creation:
-   - Optimize memory usage for large images
-   - Add support for vertical panoramas
-   - Implement exposure compensation
-
-## Author
-
-[Your Name]
-Roll No: [Your Roll No]
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
