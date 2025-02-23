@@ -85,7 +85,7 @@ The script produces three main outputs:
 4. Total coin count displayed in the console
 
 <p float="left">
-  <img src="path/to/image1.png" width="200" />
+  <img src="results/Coin Detection.png" width="200" />
   <img src="path/to/image2.png" width="200" />
 </p>
 
