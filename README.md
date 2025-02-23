@@ -9,18 +9,22 @@ This repository contains the implementation of two computer vision tasks:
 ## Project Structure
 
 ```
-VR_Assignment1_AshashreeSarma_MS2024005/
+VR_Assignment1_[YourName]_[YourRollNo]/
 ├── src/
 │   ├── coin_detection_and_segmentation.py
 │   └── panorama.py
 ├── images/
-│   ├── Scattered_indian_coins_input_images/
+│   ├── coins/
 │   │   └── coinss.31.33 AM.png
-│   └── Panorama_captured_Images/
+│   └── panorama/
 │       ├── a.jpeg
 │       ├── b.jpeg
 │       ├── c.jpeg
 │       └── d.jpeg
+├── results/
+│   ├── coin_detection.png
+│   ├── coin_segmentation.png
+│   └── panorama_result.png
 └── README.md
 ```
 
