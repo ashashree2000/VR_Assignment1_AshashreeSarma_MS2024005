@@ -134,7 +134,7 @@ The script produces:
 
    <p float="left">
   <img src="results/Input_Images.png" width="500" />
-  <img src="results/Keypoints of images.png width="500" />
+  <img src="results/Keypoints of images.png" width="500" />
   <img src="results/panorama.jpg" width="500" />
 </p>
 
