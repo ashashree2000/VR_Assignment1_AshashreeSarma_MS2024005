@@ -90,7 +90,7 @@ The script produces three main outputs:
 </p>
 
 
-Current detection accuracy: ~95 coins detected
+Current detection accuracy: ~101 coins detected
 
 ### Observations
 
