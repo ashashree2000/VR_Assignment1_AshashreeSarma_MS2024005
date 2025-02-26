@@ -9,7 +9,7 @@ This repository contains the implementation of two computer vision tasks:
 ## Project Structure
 
 ```
-VR_Assignment1_[YourName]_[YourRollNo]/
+VR_Assignment1_AshashreeSarma_MS2024005/
 ├── src/
 │   ├── coin_detection_and_segmentation.py
 │   └── panorama.py
