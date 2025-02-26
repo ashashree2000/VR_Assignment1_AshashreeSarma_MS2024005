@@ -72,9 +72,11 @@ The coin detection system uses the following techniques:
 
 ```bash
 python src/coin_detection_and_segmentation.py
-
-or sun the followimg file in collab
 ```
+
+or run the following file in Google Colab after uploading the images. The paths are already predefined, so no additional configuration is needed.
+
+If running the code on VS Code, ensure that the input images are placed in the same folder as specified in the project structure, and the program should execute without any issues.
 
 ### Results
 
@@ -88,7 +90,6 @@ The script produces three main outputs:
   <img src="results/Coin Detection.png" width="500" />
   <img src="results/Coin Segmentation.png" width="500" />
 </p>
-
 
 Current detection accuracy: ~101 coins detected
 
@@ -125,6 +126,10 @@ The panorama creation system utilizes:
 python src/panorama.py
 ```
 
+or run the file in Google Colab after uploading the images. The paths are predefined, so no additional setup is needed.
+
+For running in VS Code, place the input images in the correct folder structure, and the program should run without any additional modifications.
+
 ### Results
 
 The script produces:
@@ -143,5 +148,3 @@ The script produces:
 - Successful stitching requires sufficient overlap between images
 - Best results achieved with consistent lighting and minimal movement
 - SIFT provides robust feature detection across different scenes
-
-
