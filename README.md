@@ -6,7 +6,62 @@ This repository contains the implementation of two computer vision tasks:
 1. Detection and segmentation of Indian coins
 2. Creation of panoramic images from overlapping photos
 
-## Project Structure
+## README File Structure
+
+This README is structured to provide a clear and comprehensive understanding of the project, following a logical sequence:
+
+1. **Project Overview**  
+   - A brief introduction to the two main tasks: Coin Detection & Segmentation and Panorama Creation.
+
+2. **Project Structure**  
+   - A directory tree representation of the repository layout to help users navigate through the files.
+
+3. **Dependencies & Installation**  
+   - Lists the required libraries and a simple command to install them.
+
+4. **Part 1: Coin Detection and Segmentation**  
+   - **Implementation Details**: Step-by-step explanation of each technique used, along with the necessity of each step.  
+   - **Features**: Key functionalities, including detection, segmentation, and counting.  
+   - **Flowchart**: A high-level process flow to visually represent the pipeline.  
+   - **How to Run**: Instructions for executing the script in different environments.  
+   - **Results**: Sample output images and detection accuracy.  
+   - **Challenges Encountered in Coin Processing**: Insights from experimentation with different input images and potential improvements.
+   - **Future Work & Enhancements**: Potential improvements, such as deep learning-based detection and advanced segmentation techniques.
+   - **References and Conclusion**: Links of resources used and conclusion.
+
+5. **Part 2: Panorama Creation**  
+   - **Implementation Details**: Explanation of key functions used for feature detection, matching, and image stitching.
+   - **Features**: Key functionalities, including detection, segmentation, and counting.  
+   - **Flowchart**: A high-level process flow to visually represent the pipeline.  
+   - **How to Run**: Instructions for executing the script in different environments.  
+   - **Results**: Sample output images and detection accuracy.  
+   - **Difficulties in Panorama Assembly**: Issues encountered during development and how they could be improved.
+   - **Future Work & Enhancements**: Potential improvements.
+   - **References and Conclusion**: Links of resources used and conclusion.
+
+
+
+The README ensures that any new user can understand the project workflow, replicate results, and extend the functionality if needed.
+
+
+## 1. Project Overview
+
+This project focuses on two key computer vision tasks:
+
+1. **Coin Detection and Segmentation**  
+   - The goal is to detect Indian coins in an image, count them, and segment individual coins using computer vision techniques.  
+   - The pipeline involves preprocessing, edge detection, contour analysis, and masking to extract and count coins.  
+   - The output includes the total coin count and segmented coin images.
+
+2. **Panorama Creation**  
+   - This task involves stitching multiple overlapping images together to generate a seamless panoramic view.  
+   - The implementation involves feature extraction, feature matching, homography estimation, and image warping.  
+   - The final output is a blended panorama without noticeable seams.
+
+Both tasks utilize OpenCV and NumPy for processing, with a focus on efficient and scalable implementations.
+
+
+## 2. Project Structure
 
 ```
 VR_Assignment1_AshashreeSarma_MS2024005/
@@ -28,7 +83,7 @@ VR_Assignment1_AshashreeSarma_MS2024005/
 └── README.md
 ```
 
-## Dependencies
+## 3. Dependencies and Installation
 
 The project requires the following Python packages:
 ```
@@ -42,7 +97,7 @@ To install dependencies:
 pip install -r requirements.txt
 ```
 
-## Part 1: Coin Detection and Segmentation
+## 4. Part 1: Coin Detection and Segmentation
 
 ### Implementation Details
 
@@ -110,20 +165,26 @@ The script produces three main outputs:
 
 Current detection accuracy: ~101 coins detected.
 
-### Challenges Faced
-- **Overlapping Coins**: Some coins are difficult to detect if they overlap significantly, leading to undercounting or incorrect segmentation. More sophisticated segmentation techniques, such as watershed or deep learning-based methods, could help address this issue.
-- **Lighting Variations**: Uneven lighting affects segmentation and edge detection accuracy, causing missed detections or false positives. Adaptive thresholding or contrast enhancement techniques may improve performance.
+### Challenges Faced in Coin Processing
+After trying on multiple input images with variations, here is my understanding:
+- **Handling Overlapping Coins**: Some coins are difficult to detect if they overlap significantly, leading to undercounting or incorrect segmentation. More sophisticated segmentation techniques, such as watershed or deep learning-based methods, could help address this issue.
+- **Inconsistent Lighting Conditions**: Uneven lighting affects segmentation and edge detection accuracy, causing missed detections or false positives. Adaptive thresholding or contrast enhancement techniques may improve performance.
 - **Coin Reflection & Shadows**: Bright reflections can cause false detections, while shadows may obscure coin edges. Preprocessing techniques like histogram equalization could help balance illumination conditions.
-- **Different Denominations**: Some coins may have low contrast, making detection harder, especially if they blend with the background. Feature-based classification methods might be required for better robustness.
+- **Different Denominations and Diversity in Coin Features**: Some coins may have low contrast, making detection harder, especially if they blend with the background. Feature-based classification methods might be required for better robustness.
 
 ### Further Improvements
 - Implement **Deep Learning-based object detection** (e.g., YOLO, Faster R-CNN) for better accuracy.
 - Improve segmentation using **watershed algorithms** or **active contours**.
 - Enhance robustness under poor lighting conditions using adaptive preprocessing.
 
+### References
+- Object Detection: https://www.projectpro.io/article/object-detection-project-ideas-with-source-code/490 , https://www.geeksforgeeks.org/object-detection-vs-object-recognition-vs-image-segmentation/
+- Feature segmentation: https://www.geeksforgeeks.org/explain-image-segmentation-techniques-and-applications/, https://www.geeksforgeeks.org/image-segmentation-models/
+
+
 ---
 
-## Part 2: Panorama Creation
+## 5. Part 2: Panorama Creation
 
 ### Implementation Details
 
@@ -162,10 +223,47 @@ The panorama creation system utilizes:
 #### Processing Flowchart:
 ```
 [Input Images] → [Keypoint Detection] → [Feature Matching] → [Homography Computation] → [Warping] → [Blending] → [Final Panorama]
+
 ```
 
-### Challenges Faced
-- **Poor Feature Detection**: ORB does not always provide as strong matches as SIFT, leading to incorrect alignments. Using advanced feature extractors could improve matching.
-- **Lighting Variations**: Differences in exposure can create visible seams in the panorama. Exposure correction techniques could mitigate this issue.
-- **Insufficient Overlap**: If images have too little overlap, homography estimation fails, breaking the panorama. Capturing images with more overlap can help.
-- **Perspective Distortion**: Wide-angle images can lead to unwanted distortions, making the stitched output unnatural. Applying cylindrical or spherical projections might improve results.
+### How to Run
+
+```bash
+python src/panorama.py
+```
+
+or run the file in Google Colab after uploading the images. The paths are predefined, so no additional setup is needed.
+
+For running in VS Code, place the input images in the correct folder structure, and the program should run without any additional modifications.
+
+### Results
+
+The script produces:
+1. Visualization of original input images
+2. Images with detected keypoints
+3. Final stitched panorama
+
+   <p float="left">
+  <img src="results/Input_Images.png" width="500" />
+  <img src="results/Keypoints of images.png" width="500" />
+  <img src="results/panorama.jpg" width="500" />
+</p>
+
+### Observations
+
+- Successful stitching requires sufficient overlap between images
+- Best results achieved with consistent lighting and minimal movement
+- SIFT provides robust feature detection across different scenes
+
+
+### Challenges Faced in Panoroma Assembly
+After trying on multiple input images with variations, here is my understanding:
+- **Inconsistent Feature Matching**: ORB does not always provide as strong matches as SIFT, leading to incorrect alignments. Using advanced feature extractors could improve matching.
+- **Illumination Differences**: Differences in exposure can create visible seams in the panorama. Exposure correction techniques could mitigate this issue.
+- **Limited Overlapping Regions**: If images have too little overlap, homography estimation fails, breaking the panorama. Capturing images with more overlap can help.
+- **Perspective Warping Artifacts**: Wide-angle images can lead to unwanted distortions, making the stitched output unnatural. Applying cylindrical or spherical projections might improve results.
+
+### References
+- OpenCV Documentation: https://docs.opencv.org/4.x/index.html
+- Feature Matching Techniques: https://www.geeksforgeeks.org/feature-matching-in-computer-vision-techniques-and-applications/, https://medium.com/@deepanshut041/introduction-to-feature-detection-and-matching-65e27179885d
+- Image Stitching Algorithms: https://www.geeksforgeeks.org/image-stitching-with-opencv/, https://paperswithcode.com/task/image-stitching
