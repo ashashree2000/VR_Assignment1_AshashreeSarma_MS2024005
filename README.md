@@ -97,7 +97,7 @@ To install dependencies:
 pip install -r requirements.txt
 ```
 
-## 4. Part 1: Coin Detection and Segmentation
+##  Part 1: Coin Detection and Segmentation
 
 ### Implementation Details
 
@@ -184,7 +184,7 @@ After trying on multiple input images with variations, here is my understanding:
 
 ---
 
-## 5. Part 2: Panorama Creation
+##  Part 2: Panorama Creation
 
 ### Implementation Details
 
